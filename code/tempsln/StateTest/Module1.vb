@@ -1,4 +1,6 @@
-﻿Module Module1
+﻿' コメント
+
+Module Module1
 
     ' IContextインターフェイスです。
     Public Interface IContext
