@@ -17,7 +17,32 @@ namespace ConsoleApplication2
         {
             LogManager l = new LogManager();
 
-            
+            DateTime now = DateTime.Now;
+
+            while (true)
+            {
+                DateTime now2 = DateTime.Now;
+                if (now2 - now > new TimeSpan(0, 0, 0, 2))
+                {
+                    break;
+                }
+                Log.TR(null, Log.CP("now2", now2));
+                System.Threading.Thread.Sleep(1);
+            }
+
+            return;
+
+            string cmd = "GDCK 1,20";
+            string str = new string(cmd.TakeWhile(c => c != ',').ToArray());
+            Log.TR(null, Log.CP("str", str));
+
+            String charaString = @"\0\2\1\2AAA";
+
+            charaString = charaString.Replace(@"\0\2", @"x02,");
+            charaString = charaString.Replace(@"\3", @"x03,");
+            charaString = charaString.Replace(@"\4", @"x04,");
+
+            Log.TR(null, Log.CP("charaString", charaString));
 
 
             Log.TR(null, "WaitOne / Deq / Reset");
